@@ -15,7 +15,7 @@ Counter-Clockwise Rotation:
 Remove k nodes from the front of the list & move them to the end
 
 Sample Output:
-    - List = 50 60 10 20 30 40
+    - List = 50->60->10->20->30->40
 #endif
 ListNode* rotate(ListNode *head, int k)
 {
