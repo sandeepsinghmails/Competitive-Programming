@@ -40,7 +40,7 @@ ListNode* rotate(ListNode *head, int k)
 		return head;                // return UnModified List
 
     #if 0
-	current points to kth node. Store it in a variable.
+    current points to kth node. Store it in a variable.
     For Sample List:
     10->20->30->40
                 |
@@ -48,44 +48,44 @@ ListNode* rotate(ListNode *head, int k)
     #endif
 	ListNode* kthNode = current;
 
-	#if 0
-	Reach the Last List Node:
+    #if 0
+    Reach the Last List Node:
     Once this Loop Completes:
-	10->20->30->40->50->60
-	                    |
-	                    current
+    10->20->30->40->50->60
+	                |
+	                current
     #endif
 	while (current->next != NULL)
 		current = current->next;
 
     #if 0
-	Change next of last node to Previous head:
-	10->20->30->40->50->60 ----> head
-	|                   |
-	head                current
+    Change next of last node to Previous head:
+    10->20->30->40->50->60 ----> head
+    |                   |
+    head                current
     #endif
 	current->next = head;
 
-	#if 0
-	Change head to (k+1)th node
-	head is now changed to node 50
+    #if 0
+    Change head to (k+1)th node
+    head is now changed to node 50
 
-	             kthNode
-	             |
+                kthNode
+                |
     10->20->30->40->50->60
 	                |
 	                head
-	#endif
-	head = kthNode->next;
-
-	#if 0
-	Change next of kth node to NULL
-	next of 40 is now NULL
-    10->20->30->40---->NULL     50->60
-	            |             |
-	            kthNode       head
     #endif
-	kthNode->next = NULL;
+    head = kthNode->next;
 
-	return head;
+    #if 0
+    Change next of kth node to NULL
+    next of 40 is now NULL
+    10->20->30->40---->NULL     50->60
+                |               |
+                kthNode         head
+    #endif
+    kthNode->next = NULL;
+
+    return head;
 }
