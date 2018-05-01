@@ -20,7 +20,7 @@ ListNode* rotate(ListNode *head, int k)
 	if (k == 0)
         return head;                // return UnModified List
 
-    // Temporary ListNode* -- for Traversing the List
+        // Temporary ListNode* -- for Traversing the List
 	ListNode* current = head;
 
 	/* current will either point to kth or NULL after this loop.
