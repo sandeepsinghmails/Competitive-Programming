@@ -46,7 +46,7 @@ ListNode* rotate(ListNode *head, int k)
                 |
                 kthNode
     #endif
-	ListNode* kthNode = current;
+    ListNode* kthNode = current;
 
     #if 0
     Reach the Last List Node:
@@ -55,8 +55,8 @@ ListNode* rotate(ListNode *head, int k)
 	                |
 	                current
     #endif
-	while (current->next != NULL)
-		current = current->next;
+    while (current->next != NULL)
+    	current = current->next;
 
     #if 0
     Change next of last node to Previous head:
@@ -64,7 +64,7 @@ ListNode* rotate(ListNode *head, int k)
     |                   |
     head                current
     #endif
-	current->next = head;
+    current->next = head;
 
     #if 0
     Change head to (k+1)th node
