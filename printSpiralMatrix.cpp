@@ -14,13 +14,13 @@ void printSpiral(int rowEnd,
 {
 	int i, rowStart = 0, colStart = 0;
 
-  #if 0
+  	#if 0
 	rowStart - starting row index  
 	rowEnd - ending row index  
 	colStart - starting column index 
 	colEnd   - ending column index  
-  i - iterator 
-  #endif
+  	i - iterator 
+ 	 #endif
 
 
 	while (rowStart < rowEnd && colStart < colEnd)
