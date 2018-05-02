@@ -22,7 +22,6 @@ void printSpiral(int rowEnd,
   	i - iterator 
  	#endif
 
-
 	while (rowStart < rowEnd && colStart < colEnd)
 	{
 		// TOP ROW: 
@@ -70,7 +69,7 @@ void printSpiral(int rowEnd,
 	}
 }
 
-// Driver program to test above functions 
+// Driver Program for Testing
 int main()
 {
 	int a[RowMax][ColMax] = { {1, 2, 3, 4, 5, 6},
