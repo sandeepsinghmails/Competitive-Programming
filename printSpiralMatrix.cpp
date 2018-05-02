@@ -20,7 +20,7 @@ void printSpiral(int rowEnd,
 	colStart - starting column index 
 	colEnd   - ending column index  
   	i - iterator 
- 	 #endif
+ 	#endif
 
 
 	while (rowStart < rowEnd && colStart < colEnd)
