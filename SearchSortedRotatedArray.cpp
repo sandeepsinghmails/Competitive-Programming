@@ -47,7 +47,7 @@ int binarySearch( int array[],
                   int high, 
                   int key)
 {
-    // Step-1: Base Case
+        // Step-1: Base Case
 	if (low > high) 
 	    return FAILURE;
 
@@ -76,13 +76,13 @@ int binarySearch( int array[],
 		return binarySearch (array, mid+1, high, key);
 	}
 
-    // Step-8: As shown above if [low, mid] was NOT sorted, 
-    //         [mid+1, high] would definitely be sorted -- even if we missed some elements from it (like: 1, 2)
+        // Step-8: As shown above if [low, mid] was NOT sorted, 
+        //         [mid+1, high] would definitely be sorted -- even if we missed some elements from it (like: 1, 2)
     
-    // Step-9: Check: Does key lies in Right Sorted Subarray
+        // Step-9: Check: Does key lies in Right Sorted Subarray
 	if (key >= array[mid] && key <= array[high])
 	{
-	    // Step-10: Yes, key lies between [mid+1, high] which is Sorted
+	        // Step-10: Yes, key lies between [mid+1, high] which is Sorted
 		//         Like Normal Binary Search: Search again in [mid+1, high]
 		return binarySearch (array, mid+1, high, key);
 	}
