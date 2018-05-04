@@ -51,7 +51,7 @@ int binarySearch( int array[],
 	if (low > high) 
 	    return FAILURE;
 
-    // Step-2: Calculate mid-index
+    	// Step-2: Calculate mid-index
 	int mid = low + (high-low)/2;
 	
 	// Step-3: Match Mid-Index element with key
@@ -61,7 +61,7 @@ int binarySearch( int array[],
 	// Step-4: Check if Left Subarray -- [low, mid] is sorted
 	if (array[low] <= array[mid])
 	{
-	    // Step-5: Check: Does key lies in Left Sorted Subarray
+	    	// Step-5: Check: Does key lies in Left Sorted Subarray
 		if (key >= array[low] && key <= array[mid])
 		{
 		    // Step-6: Yes, key lies between [low, mid] which is Sorted
@@ -88,9 +88,9 @@ int binarySearch( int array[],
 	}
 	
 	// Step-11: Failure Case for Right Subarray Search 
-    //          Key lies out of the range: [mid+1, high]
-    //          Search again in leftover range: [mid+1, high]
-    //          Note: Now we will break array[mid+1, high] into 2 subarrays by calculating new mid
+    	//          Key lies out of the range: [mid+1, high]
+    	//          Search again in leftover range: [mid+1, high]
+    	//          Note: Now we will break array[mid+1, high] into 2 subarrays by calculating new mid
 	return binarySearch (array, low, mid-1, key);
 }
 
