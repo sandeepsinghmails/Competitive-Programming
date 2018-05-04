@@ -35,8 +35,8 @@ int findMinLength(string array[],
 	for (int i=0; i<=size-1; i++)
 	{
 	    // Length of ith string = array[i].length() 
-		if (array[i].length() < min)
-			min = array[i].length();
+	    if (array[i].length() < min)
+	        min = array[i].length();
 	}
 	
 	return min;
@@ -45,14 +45,16 @@ int findMinLength(string array[],
 bool doAllContainPrefix ( string array[],   // Input Set of Strings
                           int numbStrings,  // No. of Input in this Set
                           string prefix,    // Prefix -- to search in this Set between [start, end]
-					      int start,        // Start Index (for all Strings) -- to be searched for Prefix
-					      int end )         // End Index (for all Strings) -- to be searched for Prefix
+		          int start,        // Start Index (for all Strings) -- to be searched for Prefix
+		          int end )         // End Index (for all Strings) -- to be searched for Prefix
 {
 	for (int i=0; i<=numbStrings-1; i++)
 	{
-		for (int j=start; j<=end; j++)
-			if (array[i][j] != prefix[j])   // Match jth string character of ith string -- with Prefix Character
-				return false;
+	    for (int j=start; j<=end; j++)
+	    {
+	        if (array[i][j] != prefix[j])   // Match jth string character of ith string -- with Prefix Character
+		return false;
+	    }
 	}
 	return (true);
 }
@@ -68,24 +70,24 @@ string findLongestCommonPrefix(string array[],    // Input Set of Strings
 	// Resulting LCP String
 	string longestCommonPrefix; 
 
-    // Step-2: Input Range for Binary Search on Input Set of Strings
+    	// Step-2: Input Range for Binary Search on Input Set of Strings
 	int low  = 0; 
 	int high = maxPrefixLength;
 
-    // Step-3: Binary Search on Each String of Input Set from lenght=low to length-high
-    //         LCP string cannot be greater than maxPrefixLength
-    //         So, there is no point in searching any input string beyond index=maxPrefixLength-1
+    	// Step-3: Binary Search on Each String of Input Set from lenght=low to length-high
+    	//         LCP string cannot be greater than maxPrefixLength
+    	//         So, there is no point in searching any input string beyond index=maxPrefixLength-1
 	while (low <= high)
 	{
-        // Step-4: Find Mid-Point for Binary Search 
+        	// Step-4: Find Mid-Point for Binary Search 
 		int mid = low + (high - low) / 2;
 
-        // Step-5: [Key-Idea] 
-        //         Check if all Input Strings have a common prefix from length: [low, high]
-        //         Note: We are NOT searching the ENTIRE Prefix from [low, high] in one pass -- that's why it's Binary Search
-        //               We start from first half: [low, mid] 
-        //                  -- if it matches (for ALL) -- add common part to prefix & search from [mid+1, high] also in all Strings 
-        //                  -- if match failed -- Carry out next search in [low, mid-1] -- using new mid 
+        	// Step-5: [Key-Idea] 
+       		//         Check if all Input Strings have a common prefix from length: [low, high]
+        	//         Note: We are NOT searching the ENTIRE Prefix from [low, high] in one pass -- that's why it's Binary Search
+        	//               We start from first half: [low, mid] 
+        	//                  -- if it matches (for ALL) -- add common part to prefix & search from [mid+1, high] also in all Strings 
+        	//                  -- if match failed -- Carry out next search in [low, mid-1] -- using new mid 
 		if (doAllContainPrefix ( array, 
 		                         size, 
 		                         array[0],    // Using first String from Input as a reference (anyone can be used)  
@@ -93,7 +95,7 @@ string findLongestCommonPrefix(string array[],    // Input Set of Strings
 		                         low, 
 		                         mid))
 		{
-		    // Step-6: All Input Strings contain the prefix from [low, mid], so add prefix to LCP string
+		    	// Step-6: All Input Strings contain the prefix from [low, mid], so add prefix to LCP string
 			longestCommonPrefix = longestCommonPrefix + array[0].substr(low, mid-low+1);
 
 			// Step-7: After successful match from [low, mid] in all Input Strings,
@@ -101,11 +103,11 @@ string findLongestCommonPrefix(string array[],    // Input Set of Strings
 			low = mid + 1;
 		}
         
-        // Step-8: Search for Prefix in the range [low, mid] failed
-        //         So, LCP must be shorter than [low, mid]
-        //         There is NO Point of searching the remaining half prefix -- from [mid+1, high]
-        // Repeat this procedure in the Left part of Prefix: [low, mid] by breaking it into 2 parts again
-        //        & then calculating the fresh mid
+        	// Step-8: Search for Prefix in the range [low, mid] failed
+        	//         So, LCP must be shorter than [low, mid]
+        	//         There is NO Point of searching the remaining half prefix -- from [mid+1, high]
+        	// Repeat this procedure in the Left part of Prefix: [low, mid] by breaking it into 2 parts again
+        	//        & then calculating the fresh mid
 		else 
 			high = mid - 1;
 	}
