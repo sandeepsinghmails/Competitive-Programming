@@ -83,7 +83,7 @@ int binarySearch( int array[],
 	if (key >= array[mid] && key <= array[high])
 	{
 	        // Step-10: Yes, key lies between [mid+1, high] which is Sorted
-		//         Like Normal Binary Search: Search again in [mid+1, high]
+		//          Like Normal Binary Search: Search again in [mid+1, high]
 		return binarySearch (array, mid+1, high, key);
 	}
 	
