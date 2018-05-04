@@ -120,8 +120,8 @@ int main()
 {
 	string array[] = {"geekysandeep", 
 	                  "geeks",
-					  "geek", 
-					  "geezer"};
+			  "geek", 
+			  "geezer"};
 					
 	int numb_strings = sizeof (array) / sizeof (array[0]);
 
