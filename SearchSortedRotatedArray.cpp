@@ -108,4 +108,6 @@ int main()
 	    cout << "Match Found at Index: " << retVal << endl;
 	else
 	    cout << "No Match";
+	
+	return 0;
 }
