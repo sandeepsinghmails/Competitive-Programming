@@ -40,8 +40,8 @@ Key-Idea:
 #endif
 
 // Returns:
-// Success: Index of Matched key
-// Failure: FAILURE
+// [Success]: Index of Matched key
+// [Failure]: FAILURE
 int binarySearch( int array[], 
                   int low, 
                   int high, 
