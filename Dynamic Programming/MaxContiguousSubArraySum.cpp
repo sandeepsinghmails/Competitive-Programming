@@ -19,10 +19,10 @@ int maxContiguousSubArraySum(int array[],
         //                    =   0, curr_max remains unaffected, keep moving
         //                    = -ve, curr_max would be decreased -- but max_so_far = Unaffected
         curr_max   = max (array[i], 
-    	                    curr_max + array[i]);
+                          curr_max + array[i]);
     		                  
         max_so_far = max (max_so_far, 
-    		                  curr_max);
+                          curr_max);
     }
     
     return max_so_far;
