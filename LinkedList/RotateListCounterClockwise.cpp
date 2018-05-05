@@ -74,20 +74,27 @@ ListNode* rotate(ListNode *head, int k)
 
                 kthNode
                 |
-    10->20->30->40->50->60
-	                |
-	                head
+    10->20->30->40->50->60 ----> 10
+	            |
+	            head
     #endif
     head = kthNode->next;
 
     #if 0
     Change next of kth node to NULL
     next of 40 is now NULL
-    10->20->30->40---->NULL     50->60
+    10->20->30->40---->NULL     50->60 ----> 10
                 |               |
                 kthNode         head
     #endif
     kthNode->next = NULL;
+	    
+    #if 0
+    Final List:
+    50->60 ----> 10->20->30->40---->NULL     
+    |                        |               
+    head                     kthNode       	    
+    #endif
 
     return head;
 }
