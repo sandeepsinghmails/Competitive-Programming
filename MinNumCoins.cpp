@@ -52,8 +52,9 @@ int findMinCoins ( int coinSet[],
 		    // -- You've already calculated it :)
 		    // => minCoins[Value=remaining_sum]
 		    //    If this value is NOT Unknown (Infinite/INT_MAX) 
-		    //                minCoins required to sum up to Value (v) = 1 (for current coin: coinSet[c]) + minCoins[remaining_sum]
-		    //                Update: minCoins [v] = 1 + minCoins[remaining_sum]
+		    //    	minCoins required to sum up to Value (v) = 1 (for current coin: coinSet[c])
+		    //							   + minCoins[remaining_sum]
+		    //          Update: minCoins [v] = 1 + minCoins[remaining_sum]
 		    if (minCoins[remaining_sum] != INT_MAX &&
 		        minCoins[remaining_sum] + 1 < minCoins[v])
 		        minCoins[v] = minCoins[remaining_sum] + 1;
