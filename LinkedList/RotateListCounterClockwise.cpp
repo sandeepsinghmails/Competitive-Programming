@@ -19,27 +19,27 @@ Sample Output:
 #endif
 ListNode* rotate(ListNode *head, int k)
 {
-	if (k == 0)
+     if (k == 0)
         return head;                // return UnModified List
 
-        // Temporary ListNode* -- for Traversing the List
-	ListNode* current = head;
+     // Temporary ListNode* -- for Traversing the List
+     ListNode* current = head;
 
-	/* current will either point to kth or NULL after this loop.
-	 * current will point to node 40 in Sample List
-	 * Note: count cannot be 0, since you're already pointing to First Node, k-1 more to traverse
-	 */
-	int count = 1;
-	while (count < k && current != NULL)
-	{
-		current = current->next;
-		count++;
-	}
+     /* current will either point to kth or NULL after this loop.
+      * current will point to node 40 in Sample List
+      * Note: count cannot be 0, since you're already pointing to First Node, k-1 more to traverse
+      */
+     int count = 1;
+     while (count < k && current != NULL)
+     {
+         current = current->next;
+	 count++;
+     }
 
-	// If current is NULL, k >= Size of the Linked List
-	// Don't change the list in this case
-	if (current == NULL)
-		return head;                // return UnModified List
+     // If current is NULL, k >= Size of the Linked List
+     // Don't change the list in this case
+    if (current == NULL)
+        return head;                // return UnModified List
 
     #if 0
     current points to kth node. Store it in a variable.
