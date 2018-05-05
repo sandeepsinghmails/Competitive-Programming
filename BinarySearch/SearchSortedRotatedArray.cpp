@@ -69,10 +69,10 @@ int binarySearch( int array[],
 		    return binarySearch (array, low, mid-1, key);
 		}
 
-        // Step-7: Failure Case for Left Subarray Search 
-        //         Key lies out of the range: [low, mid]
-        //         Search again in leftover range: [mid+1, high]
-        //         Note: Now we will break array[mid+1, high] into 2 subarrays by calculating new mid
+        	// Step-7: Failure Case for Left Subarray Search 
+        	//         Key lies out of the range: [low, mid]
+        	//         Search again in leftover range: [mid+1, high]
+        	//         Note: Now we will break array[mid+1, high] into 2 subarrays by calculating new mid
 		return binarySearch (array, mid+1, high, key);
 	}
 
