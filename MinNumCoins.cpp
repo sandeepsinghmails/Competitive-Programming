@@ -33,7 +33,7 @@ int findMinCoins ( int coinSet[],
 	for (int c=1; c<=Value; c++)
 		minCoins[c] = INT_MAX;
 
-    // Use: Memoization
+        // Use: Memoization
 	for (int v=1; v<=Value; v++)
 	{
 		/* To find out no. of minCoins which sum up to value 'v',
