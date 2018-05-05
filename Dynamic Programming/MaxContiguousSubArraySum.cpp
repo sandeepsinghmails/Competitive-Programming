@@ -8,7 +8,7 @@
 using namespace std;
 
 int maxContiguousSubArraySum(int array[], 
-                          int size)
+                             int size)
 {
     int max_so_far = array[0];
     int curr_max   = array[0];
