@@ -47,8 +47,9 @@ int findMinCoins ( int coinSet[],
 		    // To reach v, remaining_sum = v-coinSet[c]
 		    int remaining_sum = v-coinSet[c];
 		    
-		    // -- Now, target: remaining_sum   --- This is your new Value
+		    // Now, target: remaining_sum   --- This is your new Value
 		    // How many minCoins sum up to Value=remaining_sum ?
+		    // -- You've already calculated it :)
 		    // => minCoins[Value=remaining_sum]
 		    //    If this value is NOT Unknown (Infinite/INT_MAX) 
 		    //                minCoins required to sum up to Value (v) = 1 (for current coin: coinSet[c]) + minCoins[remaining_sum]
@@ -61,7 +62,7 @@ int findMinCoins ( int coinSet[],
 	return minCoins[Value];
 }
 
-// Driver program to test above function
+// Driver program for Testing
 int main()
 {
 	int coinSet[] = {9, 6, 5, 1};
