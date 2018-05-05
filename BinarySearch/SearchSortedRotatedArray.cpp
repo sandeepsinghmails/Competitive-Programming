@@ -68,12 +68,14 @@ int binarySearch( int array[],
 		    //         Like Normal Binary Search: Search again in [low, mid]
 		    return binarySearch (array, low, mid-1, key);
 		}
-
-        	// Step-7: Failure Case for Left Subarray Search 
-        	//         Key lies out of the range: [low, mid]
-        	//         Search again in leftover range: [mid+1, high]
-        	//         Note: Now we will break array[mid+1, high] into 2 subarrays by calculating new mid
-		return binarySearch (array, mid+1, high, key);
+		else
+		{
+        		// Step-7: Failure Case for Left Subarray Search 
+        		//         Key lies out of the range: [low, mid]
+        		//         Search again in leftover range: [mid+1, high]
+        		//         Note: Now we will break array[mid+1, high] into 2 subarrays by calculating new mid
+			return binarySearch (array, mid+1, high, key);
+		}
 	}
 
         // Step-8: As shown above if [low, mid] was NOT sorted, 
@@ -86,12 +88,14 @@ int binarySearch( int array[],
 		//          Like Normal Binary Search: Search again in [mid+1, high]
 		return binarySearch (array, mid+1, high, key);
 	}
-	
-	// Step-11: Failure Case for Right Subarray Search 
-    	//          Key lies out of the range: [mid+1, high]
-    	//          Search again in leftover range: [mid+1, high]
-    	//          Note: Now we will break array[mid+1, high] into 2 subarrays by calculating new mid
-	return binarySearch (array, low, mid-1, key);
+	else
+	{
+		// Step-11: Failure Case for Right Subarray Search 
+    		//          Key lies out of the range: [mid+1, high]
+    		//          Search again in leftover range: [mid+1, high]
+    		//          Note: Now we will break array[mid+1, high] into 2 subarrays by calculating new mid
+		return binarySearch (array, low, mid-1, key);
+	}
 }
 
 // Driver program for testing
