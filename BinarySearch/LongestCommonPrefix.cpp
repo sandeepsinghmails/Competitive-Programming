@@ -32,7 +32,7 @@ int findMinLength(string array[],
 {
 	int min = INT_MAX;
 
-	for (int i=0; i<=size-1; i++)
+	for (int i=0; i<size; i++)
 	{
 	    // Length of ith string = array[i].length() 
 	    if (array[i].length() < min)
