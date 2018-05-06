@@ -84,9 +84,11 @@ string findLongestCommonPrefix(string array[],    // Input Set of Strings
 
         	// Step-5: [Key-Idea] 
        		//         Check if all Input Strings have a common prefix from length: [low, high]
-        	//         Note: We are NOT searching the ENTIRE Prefix from [low, high] in one pass -- that's why it's Binary Search
+        	//         Note: We are NOT searching the ENTIRE Prefix from [low, high] in one pass 
+		//								   -- that's why it's Binary Search
         	//               We start from first half: [low, mid] 
-        	//                  -- if it matches (for ALL) -- add common part to prefix & search from [mid+1, high] also in all Strings 
+        	//                  -- if it matches (for ALL) -- add common part to prefix 
+		//					              & search from [mid+1, high] also in all Strings 
         	//                  -- if match failed -- Carry out next search in [low, mid-1] -- using new mid 
 		if (doAllContainPrefix ( array, 
 		                         size, 
