@@ -3,8 +3,6 @@
 #include <iostream>
 using namespace std;
 
-/* lis() returns the length of the longest increasing
-subsequence in arr[] of size n */
 int lis( int arr[], int size )
 {
 	int *lis;
